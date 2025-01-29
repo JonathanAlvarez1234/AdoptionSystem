@@ -6,7 +6,7 @@ export const esRoleValido = async(role = '') => {
     const existeRol = await Role.findOne({ role});
 
     if(!existeRol){
-        throw new Error(`El rol ${role} no existe en la base de datos`);
+        throw new Error(`El rol ${role} no existe en la base de datos.`);
 
 
     }
