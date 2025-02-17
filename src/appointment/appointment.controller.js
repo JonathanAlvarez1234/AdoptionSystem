@@ -18,7 +18,7 @@ export const saveAppointment = async (req, res) => {
 
         const appointment = new Appointment({
             ...data,
-            keeper: user._id, 
+            older: user._id, 
             pet: pet._id
             
         });
@@ -50,11 +50,11 @@ export const getAppointments = async(req, res) => {
         
         const appointmentWithOwnerNames = await Promise.all(appointments.map(async(appointment) =>{
             const pet = await Pet.findById(appointment.pet);
-            const owner = await User.findById(appointment.keeper);
+            const owner = await User.findById(appointment.older);
             return{
                 ...appointment.toObject(),
                 pet: pet ? pet.name : "Propetario no encontrado",
-                keeper: owner ? owner.name : "Propetario no encontrado_"
+                older: owner ? owner.name : "Propetario no encontrado"
             }
         }))
 
@@ -89,13 +89,13 @@ export const searchAppointment = async (req, res) => {
         }
 
         const pet = await Pet.findById(appointment.pet);
-        const owner = await User.findById(appointment.keeper);
+        const owner = await User.findById(appointment.older);
         res.status(200).json({
             success: true,
             appointment: {
                 ...appointment.toObject(),
                 pet: pet ? pet.name : "Mascota no encontrada",
-                keeper: owner ? owner.name : "Propietario no encontrado"
+                older: owner ? owner.name : "Propietario no encontrado"
             }
         })
     } catch (error) {
@@ -139,7 +139,7 @@ export const updateAppointment = async (req, res = response) => {
                     msg: 'Usuario no encontrado con ese correo electronico',
                 });
             }
-            data.keeper = user._id;
+            data.older = user._id;
         };
         
         if(name) {

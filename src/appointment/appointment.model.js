@@ -1,15 +1,15 @@
 import { Schema, model } from "mongoose";
 
 const AppointmentSchema = Schema({
+    description: {
+        type: String,
+        required: true
+    },
     date: {
         type: String,
         required: true
     },
     hour:{
-        type: String,
-        required: true
-    },
-    description: {
         type: String,
         required: true
     },
