@@ -12,7 +12,7 @@ export const login = async (req, res) => {
 
         if(!user){
             return res.status(400).json({
-                msg: 'Credenciales incorrectas, Correo no existe en la base de datos'
+                msg: 'Credenciales incorrectas, el correo no existe en la base de datos'
             });
         }
 
@@ -75,7 +75,7 @@ export const register = async (req, res) => {
         console.log(error);
         return res.status(500).json({
             message: "User registration failed",
-            error: err.message
+            error: error.message
         })
     }
 }

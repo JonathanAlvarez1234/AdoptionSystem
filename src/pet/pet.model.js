@@ -18,7 +18,7 @@ const PetSchema = Schema({
         uppercase: true,
         required: true
     },
-    keeper: {
+    older: {
         type: Schema.Types.ObjectId,
         ref: 'user',
         required: true

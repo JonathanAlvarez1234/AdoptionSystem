@@ -15,7 +15,7 @@ export const savePet = async (req,res) =>{
  
         const pet = new Pet({
             ...data,
-            keeper: user._id
+            older: user._id
         });
  
         await pet.save();
@@ -46,7 +46,7 @@ export const getPets = async (req, res) =>{
             const owner = await User.findById(pet.keeper);
             return {
                 ...pet.toObject(),
-                keeper: owner ? owner.name : "propietario no encontrado"
+                older: owner ? owner.name : "propietario no encontrado"
             }
         }))
  
@@ -78,12 +78,12 @@ export const searchPet = async (req, res) => {
             })
         }
 
-        const owner = await User.findById(pet.keeper);
+        const owner = await User.findById(pet.older);
         res.status(200).json({
             success: true,
             pet: {
                 ...pet.toObject(),
-                keeper: owner ? owner.nombre : "Propietario no encontrado"
+                older: owner ? owner.nombre : "Propietario no encontrado"
             }
         })
     } catch (error) {
@@ -129,7 +129,7 @@ export const updatePet = async (req, res = response) => {
                     msg: 'Usuario con ese correo electrónico no encontrado',
                 });
             }
-            data.keeper = user._id;
+            data.older = user._id;
         }
  
         const pet = await Pet.findByIdAndUpdate(id, data, { new: true });

@@ -1,0 +1,45 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Auth",
+    "collectionId": "8ead075f-1108-425c-9c2b-d34af0344ced",
+    "dateExported": "2025-02-17T22:50:24.558Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "528de898-e08c-41f4-9851-75a35d2e92a0",
+            "colId": "8ead075f-1108-425c-9c2b-d34af0344ced",
+            "containerId": "",
+            "name": "Register",
+            "url": "http://localhost:3001/adoptionSystem/v1/users/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2025-02-17T21:50:07.238Z",
+            "modified": "2025-02-17T22:38:57.733Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n        \"name\": \"Rolando\",\r\n        \"surname\": \"Elano\",\r\n        \"username\": \"Mandrirl\",\r\n        \"email\": \"Mancodril@gmail.com\",\r\n        \"password\": \"1234568\",\r\n        \"phone\": \"12345678\",\r\n        \"role\": \"USER_ROLE\"\r\n}\r\n",
+                "form": []
+            }
+        },
+        {
+            "_id": "8e7090ea-d445-4f12-9fa8-470ac2c651af",
+            "colId": "8ead075f-1108-425c-9c2b-d34af0344ced",
+            "containerId": "",
+            "name": "Login",
+            "url": "http://localhost:3001/adoptionSystem/v1/auth/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2025-02-17T22:36:13.016Z",
+            "modified": "2025-02-17T22:36:33.860Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n        \"name\": \"Dylan\",\r\n        \"surname\": \"Oxcal\",\r\n        \"username\": \"D0xcal\",\r\n        \"email\": \"Dcalox@gmail.com\",\r\n        \"password\": \"12345689\",\r\n        \"phone\": \"77779999\",\r\n        \"role\": \"USER_ROLE\"\r\n}\r\n",
+                "form": []
+            }
+        }
+    ],
+    "ref": "YzgzaKLwM-AXMQjW8xHtIsFaNpM_424iybq9fyIab4u3PnWUlckcnCMk7yQzYyLpU_gs1x8YYTcm_gWpszz_ww"
+}
