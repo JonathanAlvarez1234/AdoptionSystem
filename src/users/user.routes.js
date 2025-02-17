@@ -44,4 +44,14 @@ router.delete(
     deleteUser
 )
 
+router.put(
+    "/newpassword/:id",
+    [
+        check("id", "No es el ID correcto").isMongoId(),
+        check("id").custom(existeUsuarioById),
+        validarCampos
+    ],
+    updatePassword
+)
+
 export default router;

@@ -1,18 +1,17 @@
 import { Router } from "express";
 import { check } from "express-validator";
-import { savePet, getPets, searchPet, deletePet } from "./pet.controller.js";
+import { getPets, savePet, searchPet, deletePet , updatePet } from "./pet.controller.js";
 import { validarCampos } from "../middlewares/validar-campos.js";
 import { validarJWT } from "../middlewares/validar-jwt.js";
 import { tieneRole } from "../middlewares/validar-roles.js";
-import { existeUsuarioById } from "../helpers/db-validator.js";
- 
+
 const router = Router();
- 
+
 router.post(
     "/",
     [
         validarJWT,
-        check('email', 'Este no es correo valido').not().isEmpty(),
+        check('email', 'Este no es correo valido!').not().isEmpty(),
         validarCampos
     ],
     savePet
@@ -24,21 +23,31 @@ router.get(
     "/:id",
     [
         validarJWT,
-        check("id", "No es un ID válido").isMongoId(),
+        check("id", "No es un ID valido!").isMongoId(),
         validarCampos
     ],
     searchPet
 )
 
 router.delete(
-    '/:id',
+    "/:id",
     [
-        tieneRole("ADMIN_ROLE", "VENTAS_ROLE"),
-        check("id", "No es un ID válido").isMongoId(),
-        check("id").custom(existeUsuarioById),
+        validarJWT,
+        check("id", "No es un ID valido!").isMongoId(),
         validarCampos
     ],
     deletePet
+)
+
+router.put(
+    "/activate/:id", 
+    [
+        validarJWT,
+        tieneRole("ADMIN_ROLE", "VENTAS_ROLE"),
+        check("id", "No es ID válido!").isMongoId(),
+        validarCampos
+    ],
+    updatePet
 )
 
 export default router;

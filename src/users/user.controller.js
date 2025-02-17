@@ -7,7 +7,6 @@ export const getUsers = async (req = request, res = response) => {
 
         const { limite = 10, desde = 0} = req.query;
         const query = { estado: true};
-
         const [total, users] = await Promise.all([
             User.countDocuments(query),
             User.find(query)
@@ -34,7 +33,6 @@ export const getUserById = async (req, res) => {
     try {
  
         const { id } = req.params;
- 
         const user = await User.findById(id);
  
         if(!user){
@@ -89,9 +87,7 @@ export const deleteUser = async (req, res) => {
     try {
         
         const { id } = req.params;
-
         const user = await User.findByIdAndUpdate(id, { estado: false}, { new: true});
-
         const autheticatedUser = req.user;
 
         res.status(200).json({
@@ -105,6 +101,31 @@ export const deleteUser = async (req, res) => {
         res.status(500).json({
             success: false,
             msg: 'Error al desactivar usuario',
+            error
+        })
+    }
+}
+
+export const updatePassword = async (req, res = response) => {
+    try {
+        const {id} = req.params;
+        const {password} = req.body;
+ 
+        if(password){
+
+            const newPassword = await hash(password)
+            const user = await User.findByIdAndUpdate(id, { password: newPassword }, { new: true });
+ 
+            res.status(200).json({
+                succes: true,
+                msj: 'Contraseña actualizado',
+                user
+            });
+        };
+    } catch (error) {
+        res.status(500).json({
+            succes: true,
+            msj: 'No se actualizo la contraseña',
             error
         })
     }

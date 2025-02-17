@@ -45,16 +45,17 @@ const UserSchema = Schema(
             default: true,
         },
     },
-    {
-        timestamps: true,
-        versionKey: false
-    }
+        {
+            timestamps: true,  //Agregar
+            versionKey: false   //Sin Agregar
+        }
 );
 
 UserSchema.methods.toJSON = function () {
     const { __v, password, _id, ...usuario } = this.toObject();
     usuario.uid = _id;
     return usuario;
+    
 }
 
 export default model('User', UserSchema);
