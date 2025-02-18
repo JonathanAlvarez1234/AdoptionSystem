@@ -1,0 +1,20 @@
+[{
+  "_id": {
+    "$oid": "67b506226396e5f859ec24d1"
+  },
+  "name": "Jonathan",
+  "surname": "alvarezz",
+  "username": "jalvarez",
+  "email": "jalvarez@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$uVNisQBGb/OQkJrigniWlQ$s1xOOIkL6FAUYdgxXsJLZOYmMpfaHeMHCt2fmkg1xqM",
+  "profilePicture": null,
+  "phone": "12345678",
+  "role": "ADMIN_ROLE",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-18T22:13:54.047Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-18T22:34:07.739Z"
+  }
+}]

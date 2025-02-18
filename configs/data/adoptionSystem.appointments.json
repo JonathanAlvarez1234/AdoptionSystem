@@ -1,0 +1,44 @@
+[{
+  "_id": {
+    "$oid": "67b50e656396e5f859ec250d"
+  },
+  "description": "cita",
+  "date": "12/05/2500",
+  "hour": "12:30",
+  "location": "Zona 1",
+  "pet": {
+    "$oid": "67b508936396e5f859ec24dc"
+  },
+  "older": {
+    "$oid": "67b506226396e5f859ec24d1"
+  },
+  "status": false,
+  "createdAt": {
+    "$date": "2025-02-18T22:49:09.162Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-18T22:55:00.355Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b50eae6396e5f859ec2516"
+  },
+  "description": "cita 2",
+  "date": "12/05/2500",
+  "hour": "12:30",
+  "location": "Zona 1",
+  "pet": {
+    "$oid": "67b508936396e5f859ec24dc"
+  },
+  "older": {
+    "$oid": "67b506226396e5f859ec24d1"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-18T22:50:22.470Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-18T22:53:39.838Z"
+  }
+}]

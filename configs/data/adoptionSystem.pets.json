@@ -1,0 +1,38 @@
+[{
+  "_id": {
+    "$oid": "67b508936396e5f859ec24dc"
+  },
+  "name": "Jeremy",
+  "description": "Mas animal que mandril",
+  "age": 17,
+  "type": "MONO",
+  "older": {
+    "$oid": "67b506226396e5f859ec24d1"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-18T22:24:19.703Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-18T22:41:38.001Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b50b5f6396e5f859ec24f4"
+  },
+  "name": "Jose",
+  "description": "Animal",
+  "age": 17,
+  "type": "MANDRIL",
+  "older": {
+    "$oid": "67b506226396e5f859ec24d1"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-18T22:36:15.373Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-18T22:36:15.373Z"
+  }
+}]
