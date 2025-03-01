@@ -16,7 +16,7 @@ export const login = async (req, res) => {
             });
         }
 
-        if(!user.estado){
+        if(!user.state){
             return res.status(400).json({
                 msg: 'El usuario no existe en la base de datos'
             });
@@ -31,7 +31,7 @@ export const login = async (req, res) => {
 
         const token = await generarJWT( user.id );
         return res.status(200).json({
-            msg: 'Inicio de sesión exitoso!!',
+            msg: 'Inicio de sesión exitoso',
             userDetails: {
                 username: user.username,
                 token: token,

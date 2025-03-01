@@ -15,7 +15,6 @@ const PetSchema = Schema({
     },
     type: {
         type: String,
-        uppercase: true,
         required: true
     },
     older: {
@@ -23,7 +22,7 @@ const PetSchema = Schema({
         ref: 'user',
         required: true
     },
-    status: {
+    state: {
         type: Boolean,
         default: true
     }

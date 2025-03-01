@@ -1,44 +1,21 @@
 [{
   "_id": {
-    "$oid": "67b50e656396e5f859ec250d"
+    "$oid": "67c2c95d84c572d57cfa3771"
   },
-  "description": "cita",
-  "date": "12/05/2500",
-  "hour": "12:30",
-  "location": "Zona 1",
+  "description": "Revision de rutina",
+  "date": "2025-06-11",
+  "hour": "12:00",
+  "location": "Zona 5",
   "pet": {
-    "$oid": "67b508936396e5f859ec24dc"
+    "$oid": "67c2bdfe6796f997a8b20acb"
   },
   "older": {
-    "$oid": "67b506226396e5f859ec24d1"
+    "$oid": "67c2b611616fc73a9a6eaaae"
   },
-  "status": false,
   "createdAt": {
-    "$date": "2025-02-18T22:49:09.162Z"
+    "$date": "2025-03-01T08:46:21.371Z"
   },
   "updatedAt": {
-    "$date": "2025-02-18T22:55:00.355Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67b50eae6396e5f859ec2516"
-  },
-  "description": "cita 2",
-  "date": "12/05/2500",
-  "hour": "12:30",
-  "location": "Zona 1",
-  "pet": {
-    "$oid": "67b508936396e5f859ec24dc"
-  },
-  "older": {
-    "$oid": "67b506226396e5f859ec24d1"
-  },
-  "status": true,
-  "createdAt": {
-    "$date": "2025-02-18T22:50:22.470Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-18T22:53:39.838Z"
+    "$date": "2025-03-01T08:46:21.371Z"
   }
 }]

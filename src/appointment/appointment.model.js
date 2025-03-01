@@ -26,12 +26,9 @@ const AppointmentSchema = Schema({
         type: Schema.Types.ObjectId,
         ref: 'user',
         required: true
-    },
-    status: {
-        type: Boolean,
-        default: true
     }
-}, {
+},
+{
     timestamps: true,
     versionKey: false
 });

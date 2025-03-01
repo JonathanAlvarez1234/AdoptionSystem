@@ -5,12 +5,12 @@ const UserSchema = Schema(
         name: {
             type: String,
             required: [true, "Name is required"],
-            maxLength: [25, "Cant be overcome 25 characters"]
+            maxLength: 20
         },
         surname: {
             type: String,
             required: [true, "Surname is required"],
-            maxLength: [25, "Cant be overcome 25 characters"]
+            maxLength: 20
         },
         username: {
             type: String,
@@ -18,12 +18,12 @@ const UserSchema = Schema(
         },
         email: {
             type: String,
-            required: [true, "Email is required"],
+            required: [true, "El correo en necesario"],
             unique: true
         },
         password: {
             type: String,
-            required: [true, "Password is required"],
+            required: [true, "La contraseña es necesaria"],
             minLength: 8
         },
         profilePicture: {
@@ -40,14 +40,14 @@ const UserSchema = Schema(
             required: true,
             enum: ["ADMIN_ROLE", "USER_ROLE"],
         },
-        estado: {
+        state: {
             type: Boolean,
             default: true,
         },
     },
         {
-            timestamps: true,  //Agregar
-            versionKey: false   //Sin Agregar
+            timestamps: true,
+            versionKey: false
         }
 );
 
